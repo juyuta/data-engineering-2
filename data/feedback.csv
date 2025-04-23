@@ -1,0 +1,5 @@
+review_id,user_id,product_id,review_text,rating,timestamp
+501,1,102,Absolutely love this smartphone,5,2025-04-10T11:00:00
+502,2,101,Very informative book,4,2025-04-10T11:15:00
+503,3,103,Comfortable and stylish t-shirt,4,2025-04-10T11:30:00
+504,1,104,Watch is durable and looks great,5,2025-04-10T11:45:00

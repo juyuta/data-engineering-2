@@ -1,0 +1,12 @@
+<configuration>
+
+    <!-- Define default file system URI -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://namenode:8020</value>
+    </property>
+
+    <!-- Optional: Set Hadoop distributed file system replication and block size -->
+    <!-- Default encryption or compression settings can also be specified here -->
+
+</configuration>

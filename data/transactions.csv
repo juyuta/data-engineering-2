@@ -1,0 +1,5 @@
+transaction_id,user_id,product_id,category,price,quantity,timestamp
+1001,1,102,electronics,299.99,1,2025-04-10T10:08:30
+1002,2,101,books,15.99,2,2025-04-10T10:09:00
+1003,3,103,fashion,75.50,1,2025-04-10T10:09:45
+1004,1,104,fashion,50.00,2,2025-04-10T10:10:00

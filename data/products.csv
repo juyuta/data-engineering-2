@@ -1,0 +1,5 @@
+product_id,name,category,price,description,average_rating
+101,Learning Python,books,19.99,A comprehensive guide to Python programming.,4.5
+102,Smartphone XP,electronics,299.99,Latest model with advanced features.,4.4
+103,T-shirt, fashion, 25.00,High quality cotton t-shirt.,4.2
+104,Wristwatch,fashion,50.00,Water-resistant wristwatch.,4.3

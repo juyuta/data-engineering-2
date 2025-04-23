@@ -1,0 +1,7 @@
+user_id,page_viewed,timestamp,action_type
+1,home,2025-04-10T10:05:23,view
+2,product_101,2025-04-10T10:06:45,click
+1,product_102,2025-04-10T10:07:10,click
+3,cart,2025-04-10T10:07:32,view
+2,checkout,2025-04-10T10:08:15,click
+1,product_103,2025-04-10T10:08:30,purchase

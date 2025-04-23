@@ -1,0 +1,23 @@
+    <configuration>
+
+        <!-- DataNode address settings -->
+        <property>
+            <name>dfs.datanode.address</name>
+            <value>datanode:9865</value>
+        </property>
+        <property>
+            <name>dfs.datanode.http.address</name>
+            <value>datanode:9864</value>
+        </property>
+        <property>
+            <name>dfs.datanode.ipc.address</name>
+            <value>datanode:9866</value>
+        </property>
+
+        <!-- Directory for storing DataNode data -->
+        <property>
+            <name>dfs.datanode.data.dir</name>
+            <value>file:///hadoop/dfs/data</value>
+        </property>
+
+    </configuration>
