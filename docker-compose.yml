@@ -7,8 +7,10 @@ services:
     hostname: namenode
     environment:
       - CLUSTER_NAME=test-spark-cluster
+      - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
+      - HDFS_CONF_dfs_namenode_rpc_address_namenode=namenode:9000
     volumes:
-      - data:/hadoop/dfs/name
+      - namenode_data:/hadoop/dfs/name
       - ./conf/nn-hdfs-site.xml:/opt/hadoop-3.2.1/etc/hadoop/hdfs-site.xml
       - ./conf/core-site.xml:/opt/hadoop-3.2.1/etc/hadoop/core-site.xml
     ports:
@@ -23,23 +25,25 @@ services:
     depends_on:
       - namenode
     environment:
+      #- CORE_CONF_fs_defaultFS=hdfs://namenode:9000
+      #- HDFS_CONF_dfs_datanode_address=datanode:9867
       SERVICE_PRECONDITION: "namenode:9870"
     volumes:
-      - ./data:/hadoop/dfs/data
-      - ./conf/dn-hdfs-site.xml:/opt/hadoop-3.2.1/etc/hadoop/hdfs-site.xml
+      - datanode_data:/hadoop/dfs/data
+      - ./conf/nn-hdfs-site.xml:/opt/hadoop-3.2.1/etc/hadoop/hdfs-site.xml
       - ./conf/core-site.xml:/opt/hadoop-3.2.1/etc/hadoop/core-site.xml
     networks:
       - bigdata
 
   hive:
     image: bde2020/hive:2.3.2-postgresql-metastore
-    container_name: hive-server
+    container_name: hive
     depends_on:
       - namenode
     environment:
       HIVE_ROOT_ENV: 1
     volumes:
-      - ./conf/hive-hdfs-site.xml:/opt/hadoop-2.7.4/etc/hadoop/hdfs-site.xml
+      - ./conf/hive-site.xml:/opt/hadoop-2.7.4/etc/hadoop/hive-site.xml
       - ./conf/core-site.xml:/opt/hadoop-2.7.4/etc/hadoop/core-site.xml
     ports:
       - "10000:10000"
@@ -60,18 +64,9 @@ services:
     networks:
       - bigdata
 
-  pig:
-    build:
-      context: ./pig
-    container_name: pig
-    depends_on:
-      - namenode
-      - hive
-    networks:
-      - bigdata
-
 volumes:
-  data:
+  namenode_data:
+  datanode_data:
 
 networks:
   bigdata:
